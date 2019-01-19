@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Notification List</string>
+    <string name="firstfro">firstfro</string>
+    <string name="secondfro">secondfro</string>
+    <string name="thirdfro">thirdfro</string>
+    <string name="my_black_is_beautiful">My Black is Beautiful</string>
+    <string name="black_is_beautiful">Back</string>
+    <string name="beauty">Beauty</string>
+    <string name="click">Click</string>
+</resources>
