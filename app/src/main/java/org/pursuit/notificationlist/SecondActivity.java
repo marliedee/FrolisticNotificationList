@@ -27,6 +27,7 @@ import org.w3c.dom.Text;
 
 import static org.pursuit.notificationlist.MainActivity.imagesDisplay;
 import static org.pursuit.notificationlist.MainActivity.intentGo;
+import static org.pursuit.notificationlist.view.ImageViewHolder.froSecondView;
 import static org.pursuit.notificationlist.view.ImageViewHolder.froView;
 import static org.pursuit.notificationlist.view.ImageViewHolder.intent2;
 import static org.pursuit.notificationlist.view.ImageViewHolder.sharedPreferences;
@@ -79,7 +80,7 @@ public class SecondActivity extends AppCompatActivity {
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
         notificationManager.notify(NOTIFICATION_ID, notification);
-//        intentGo = getIntent();
+//        intent2 = getIntent().putExtra("path", froSecondView);
 
     }
 
@@ -88,7 +89,6 @@ public class SecondActivity extends AppCompatActivity {
                 getSystemService(NOTIFICATION_SERVICE);
         if (android.os.Build.VERSION.SDK_INT >=
                 android.os.Build.VERSION_CODES.O) {
-
             NotificationChannel notificationChannel = new NotificationChannel(PRIMARY_CHANNEL_ID,
                     "THE Notification", NotificationManager
                     .IMPORTANCE_HIGH);

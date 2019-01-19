@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -20,6 +21,9 @@ public class ImageViewHolder extends RecyclerView.ViewHolder {
     public static SharedPreferences sharedPreferences;
     public static Intent intent2;
     public static ImageView froView;
+    public static Integer froSecondView;
+    public static TextView tv;
+    public static ImageView iv;
 
     public ImageViewHolder(final View itemView) {
         super(itemView);
@@ -28,10 +32,15 @@ public class ImageViewHolder extends RecyclerView.ViewHolder {
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick( View view) {
-                intent2 = new Intent(itemView.getContext(), SecondActivity.class);
+                tv = itemView.findViewById(R.id.textView);
+                iv = itemView.findViewById(R.id.second_image);
+                froSecondView = imagesDisplay.get(getAdapterPosition());
                 sharedPreferences = itemView.getContext().getApplicationContext().getSharedPreferences(TAG, Context.MODE_PRIVATE);
-                intent2.putExtra("path",imagesDisplay.get(getAdapterPosition()));
+//                tv.setText("Beauty");
+//                iv.setImageResource(imagesDisplay.size());
+                intent2 = new Intent(itemView.getContext(), SecondActivity.class);
                 itemView.getContext().startActivity(intent2);
+
             }
         });
     }

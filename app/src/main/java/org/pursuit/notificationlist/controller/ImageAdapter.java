@@ -10,7 +10,6 @@ import org.pursuit.notificationlist.view.ImageViewHolder;
 import java.util.List;
 
 public class ImageAdapter extends RecyclerView.Adapter <ImageViewHolder>  {
-    public final static String EXTRA_MESSAGE = "FullScreen Image";
 
     private List<Integer> imageList;
 

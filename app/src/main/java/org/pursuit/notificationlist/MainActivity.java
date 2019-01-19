@@ -1,6 +1,7 @@
 package org.pursuit.notificationlist;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.pursuit.notificationlist.SecondActivity.sp2;
+import static org.pursuit.notificationlist.view.ImageViewHolder.froView;
 import static org.pursuit.notificationlist.view.ImageViewHolder.sharedPreferences;
 
 
@@ -23,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "image_call";
     public static ArrayList<Integer> imagesDisplay;
     public static Intent intentGo;
-//    public TextView tv = findViewById(R.id.textView);
-//    public ImageView iv = findViewById(R.id.second_image);
+    public TextView tv;
+    public ImageView iv;
 
 
 
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         RecyclerView frolisticRecycleView = (RecyclerView) findViewById(R.id.Frolistic_Recycleview);
 
@@ -73,9 +76,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ClickHere(View view) {
-        intentGo = new Intent(this, SecondActivity.class);
-//        tv.setText(R.string.beauty);
-//        iv.setImageResource(imagesDisplay.get(1));
+        Uri webpage = Uri.parse("https://www.naturallycurly.com/");
+        intentGo = new Intent(Intent.ACTION_VIEW, webpage);
         startActivity(intentGo);
     }
 }
