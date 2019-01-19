@@ -34,7 +34,7 @@ import static org.pursuit.notificationlist.view.ImageViewHolder.sharedPreference
 
 
 public class SecondActivity extends AppCompatActivity {
-    private Button button_update;
+    private ImageView image_notification;
     private NotificationReceiver mReceiver = new NotificationReceiver();
     private static final String PRIMARY_CHANNEL_ID = "primary_notification_channel";
     private NotificationManager mNotifyManager;
@@ -59,7 +59,7 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        button_update = (Button) findViewById(R.id.update);
+        image_notification =  findViewById(R.id.fro);
         sp2 = froView.getContext().getApplicationContext().getSharedPreferences("", Context.MODE_PRIVATE);
 
         Intent intent = new Intent(this, SecondActivity.class);
@@ -80,6 +80,8 @@ public class SecondActivity extends AppCompatActivity {
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
         notificationManager.notify(NOTIFICATION_ID, notification);
+        createNotificationChannel();
+        updateNotification();
 //        intent2 = getIntent().putExtra("path", froSecondView);
 
     }
@@ -119,8 +121,6 @@ public class SecondActivity extends AppCompatActivity {
 
     public void Click_Back(View view) {
         Intent intentTwo = new Intent(this, MainActivity.class);
-        createNotificationChannel();
-        updateNotification();
         startActivity(intentTwo);
     }
 
