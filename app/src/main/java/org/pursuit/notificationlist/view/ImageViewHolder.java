@@ -18,6 +18,11 @@ import static org.pursuit.notificationlist.MainActivity.imagesDisplay;
 
 public class ImageViewHolder extends RecyclerView.ViewHolder {
     private static final String TAG = "image_call";
+
+    /**
+     * Your private fields should almost NEVER be static.
+     * Only TAGS and constants should be static.
+     */
     public static SharedPreferences sharedPreferences;
     public static Intent intent2;
     public static ImageView froView;
@@ -32,9 +37,12 @@ public class ImageViewHolder extends RecyclerView.ViewHolder {
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick( View view) {
+                // What are 'tv' and 'iv' used for?
                 tv = itemView.findViewById(R.id.textView);
                 iv = itemView.findViewById(R.id.second_image);
+                // What's the purpose of this field?
                 froSecondView = imagesDisplay.get(getAdapterPosition());
+                // What are you using sharedPreferences for here?
                 sharedPreferences = itemView.getContext().getApplicationContext().getSharedPreferences(TAG, Context.MODE_PRIVATE);
 //                tv.setText("Beauty");
 //                iv.setImageResource(imagesDisplay.size());

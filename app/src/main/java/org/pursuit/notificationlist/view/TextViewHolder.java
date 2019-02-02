@@ -5,6 +5,9 @@ import android.widget.TextView;
 
 import org.pursuit.notificationlist.R;
 
+/**
+ * Class is also unused since TextAdapter isn't being used.
+ */
 public class TextViewHolder extends RecyclerView.ViewHolder {
     private TextView textFroView;
 

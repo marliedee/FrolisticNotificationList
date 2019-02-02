@@ -1,6 +1,7 @@
 package org.pursuit.notificationlist.model;
 
 public class Images {
+    // Field should be private.
     Integer image;
 
     public Images (Integer image) {

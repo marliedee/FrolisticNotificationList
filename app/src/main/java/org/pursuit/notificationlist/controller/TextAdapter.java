@@ -10,6 +10,9 @@ import org.pursuit.notificationlist.view.TextViewHolder;
 
 import java.util.List;
 
+/**
+ * What's this class doing here?
+ */
 public class TextAdapter extends RecyclerView.Adapter<TextViewHolder> {
     private List<Integer> textFro;
 

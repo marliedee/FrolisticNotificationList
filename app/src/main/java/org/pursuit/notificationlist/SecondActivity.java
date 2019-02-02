@@ -34,13 +34,13 @@ import static org.pursuit.notificationlist.view.ImageViewHolder.sharedPreference
 
 
 public class SecondActivity extends AppCompatActivity {
-    private ImageView image_notification;
+    private ImageView image_notification;       // Unused field
     private NotificationReceiver mReceiver = new NotificationReceiver();
     private static final String PRIMARY_CHANNEL_ID = "primary_notification_channel";
     private NotificationManager mNotifyManager;
     private static final int NOTIFICATION_ID = 0;
     private static final String ACTION_UPDATE_NOTIFICATION = "";
-    public static SharedPreferences sp2;
+    public static SharedPreferences sp2;        // Why is there a second sharedpreferences?
 
     public void updateNotification() {
 
@@ -119,6 +119,7 @@ public class SecondActivity extends AppCompatActivity {
 
     }
 
+    // Try not to set onclick listeners through the xml. It's not recommended
     public void Click_Back(View view) {
         Intent intentTwo = new Intent(this, MainActivity.class);
         startActivity(intentTwo);
