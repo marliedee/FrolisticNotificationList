@@ -23,13 +23,17 @@ import static org.pursuit.notificationlist.view.ImageViewHolder.sharedPreference
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "image_call";
+
+    /**
+     * Fields shouldn't be static.
+     */
     public static ArrayList<Integer> imagesDisplay;
     public static Intent intentGo;
     public TextView tv;
     public ImageView iv;
 
 
-
+    // Empty spaces
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
