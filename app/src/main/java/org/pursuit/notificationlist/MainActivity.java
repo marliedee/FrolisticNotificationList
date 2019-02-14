@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.pursuit.notificationlist.SecondActivity.sp2;
-import static org.pursuit.notificationlist.view.ImageViewHolder.froView;
 import static org.pursuit.notificationlist.view.ImageViewHolder.sharedPreferences;
 
 

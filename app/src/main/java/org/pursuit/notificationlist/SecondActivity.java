@@ -1,4 +1,3 @@
-
 package org.pursuit.notificationlist;
 
 import android.app.Notification;
@@ -17,24 +16,12 @@ import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import org.pursuit.notificationlist.controller.ImageAdapter;
-import org.w3c.dom.Text;
-
-import static org.pursuit.notificationlist.MainActivity.imagesDisplay;
-import static org.pursuit.notificationlist.MainActivity.intentGo;
-import static org.pursuit.notificationlist.view.ImageViewHolder.froSecondView;
 import static org.pursuit.notificationlist.view.ImageViewHolder.froView;
-import static org.pursuit.notificationlist.view.ImageViewHolder.intent2;
-import static org.pursuit.notificationlist.view.ImageViewHolder.sharedPreferences;
 
 
 public class SecondActivity extends AppCompatActivity {
-    private ImageView image_notification;
     private NotificationReceiver mReceiver = new NotificationReceiver();
     private static final String PRIMARY_CHANNEL_ID = "primary_notification_channel";
     private NotificationManager mNotifyManager;
@@ -59,8 +46,11 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        image_notification =  findViewById(R.id.fro);
         sp2 = froView.getContext().getApplicationContext().getSharedPreferences("", Context.MODE_PRIVATE);
+
+        Intent intent1 = getIntent();
+        ImageView imageView = findViewById(R.id.second_image);
+        imageView.setImageResource(intent1.getIntExtra("image",0));
 
         Intent intent = new Intent(this, SecondActivity.class);
         int requestID = (int) System.currentTimeMillis();
@@ -82,7 +72,6 @@ public class SecondActivity extends AppCompatActivity {
         notificationManager.notify(NOTIFICATION_ID, notification);
         createNotificationChannel();
         updateNotification();
-//        intent2 = getIntent().putExtra("path", froSecondView);
 
     }
 
