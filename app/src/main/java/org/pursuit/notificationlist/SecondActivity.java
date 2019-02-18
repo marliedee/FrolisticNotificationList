@@ -17,8 +17,9 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
-import static org.pursuit.notificationlist.view.ImageViewHolder.froView;
+import static org.pursuit.notificationlist.view.ImageViewHolder.sharedPreferences;
 
 
 public class SecondActivity extends AppCompatActivity {
@@ -27,7 +28,7 @@ public class SecondActivity extends AppCompatActivity {
     private NotificationManager mNotifyManager;
     private static final int NOTIFICATION_ID = 0;
     private static final String ACTION_UPDATE_NOTIFICATION = "";
-    public static SharedPreferences sp2;
+    private static SharedPreferences sp2;
 
     public void updateNotification() {
 
@@ -46,10 +47,19 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        sp2 = froView.getContext().getApplicationContext().getSharedPreferences("", Context.MODE_PRIVATE);
+        sp2 = getApplicationContext().getSharedPreferences("second", Context.MODE_PRIVATE);
+
+
+        if (sharedPreferences != sp2) {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Already viewed, Try another",
+                    Toast.LENGTH_LONG);
+            toast.show();
+        }
+
+        ImageView imageView = findViewById(R.id.second_image);
 
         Intent intent1 = getIntent();
-        ImageView imageView = findViewById(R.id.second_image);
         imageView.setImageResource(intent1.getIntExtra("image",0));
 
         Intent intent = new Intent(this, SecondActivity.class);

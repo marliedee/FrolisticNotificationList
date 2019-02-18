@@ -9,23 +9,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.pursuit.notificationlist.controller.ImageAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.pursuit.notificationlist.SecondActivity.sp2;
-import static org.pursuit.notificationlist.view.ImageViewHolder.sharedPreferences;
-
-
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "image_call";
     public static ArrayList<Integer> imagesDisplay;
-    public static Intent intentGo;
-    public TextView tv;
-    public ImageView iv;
+    private Intent intentGo;
 
 
 
@@ -35,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        RecyclerView frolisticRecycleView = (RecyclerView) findViewById(R.id.Frolistic_Recycleview);
+        RecyclerView frolisticRecycleView = findViewById(R.id.Frolistic_Recycleview);
 
         imagesDisplay = new ArrayList<>();
         imagesDisplay.add(R.drawable.bantufro);
@@ -64,13 +56,6 @@ public class MainActivity extends AppCompatActivity {
         ImageAdapter imageAdapter = new ImageAdapter(imagesDisplay);
         frolisticRecycleView.setAdapter(imageAdapter);
         frolisticRecycleView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-
-        if (sharedPreferences != sp2) {
-            Toast toast = Toast.makeText(getApplicationContext(),
-                    "Already viewed, Try another",
-                    Toast.LENGTH_LONG);
-            toast.show();
-        }
 
     }
 

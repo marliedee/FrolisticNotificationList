@@ -43,7 +43,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:onClick="ClickHere"
-        android:text="@string/naturally_curly"
+        android:text="@string/naturallycurly_com"
         android:textAlignment="center"
         android:textColor="#121111"
         android:textSize="18sp"
