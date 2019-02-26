@@ -7,13 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
-
 import org.pursuit.notificationlist.controller.ImageAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "image_call";
     public static ArrayList<Integer> imagesDisplay;
@@ -50,8 +46,6 @@ public class MainActivity extends AppCompatActivity {
         imagesDisplay.add(R.drawable.readingfro);
         imagesDisplay.add(R.drawable.tattoofro);
         imagesDisplay.add(R.drawable.threefro);
-        List<Integer> textDisplay = new ArrayList<>();
-        textDisplay.add(R.id.myblack);
 
         ImageAdapter imageAdapter = new ImageAdapter(imagesDisplay);
         frolisticRecycleView.setAdapter(imageAdapter);
