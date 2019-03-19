@@ -1,2 +1,1 @@
 # FrolisticNotificationList
-#![](FroGif.gif)
